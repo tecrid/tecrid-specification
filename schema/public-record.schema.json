@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tecrid/tecrid-specification/v0.1.0/schema/public-record.schema.json",
+  "title": "TECRID resolved public record",
+  "description": "Public resolver document. Controlled records omit findings and signed payloads while retaining identity, status, fingerprint, and version metadata.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "type", "tecrid", "status", "version", "visibility", "resultsAccess", "issuer", "subject", "sourceDocument", "results", "integrity", "versions", "links", "interpretationBoundary"],
+  "properties": {
+    "schemaVersion": { "const": "tec-registry/1.0-draft" },
+    "type": { "const": "TestEvidenceCredential" },
+    "tecrid": { "type": "string", "pattern": "^TECRID·[A-Z0-9]+-[0-9]{2}-[A-Z0-9]{8}$" },
+    "status": { "enum": ["issued", "corrected", "revoked"] },
+    "version": { "type": "integer", "minimum": 1 },
+    "issuedAt": { "type": ["string", "null"] },
+    "updatedAt": { "type": ["string", "null"] },
+    "visibility": { "enum": ["public", "controlled"] },
+    "resultsAccess": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "grantRequired"],
+      "properties": {
+        "state": { "enum": ["included", "controlled"] },
+        "grantRequired": { "type": "boolean" }
+      }
+    },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "name", "status", "registryPath"],
+      "properties": {
+        "code": { "type": ["string", "null"] },
+        "name": { "type": "string" },
+        "status": { "type": ["string", "null"] },
+        "registryPath": { "type": "string" }
+      }
+    },
+    "subject": { "$ref": "#/$defs/subject" },
+    "sourceDocument": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/sourceDocument" }] },
+    "results": { "type": "array", "items": { "$ref": "#/$defs/result" } },
+    "integrity": { "$ref": "#/$defs/integrity" },
+    "versions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/version" } },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human", "json", "issuer"],
+      "properties": {
+        "human": { "type": "string" },
+        "json": { "type": "string" },
+        "issuer": { "type": "string" }
+      }
+    },
+    "interpretationBoundary": { "type": "string", "minLength": 1 }
+  },
+  "$defs": {
+    "nullableText": { "type": ["string", "null"] },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sampleName", "productSku", "lotNumber", "matrix", "method", "collectedAt", "receivedAt", "testedAt", "releasedAt", "submittingParty"],
+      "properties": {
+        "sampleName": { "type": "string" },
+        "productSku": { "$ref": "#/$defs/nullableText" },
+        "lotNumber": { "$ref": "#/$defs/nullableText" },
+        "matrix": { "$ref": "#/$defs/nullableText" },
+        "method": { "$ref": "#/$defs/nullableText" },
+        "collectedAt": { "$ref": "#/$defs/nullableText" },
+        "receivedAt": { "$ref": "#/$defs/nullableText" },
+        "testedAt": { "$ref": "#/$defs/nullableText" },
+        "releasedAt": { "$ref": "#/$defs/nullableText" },
+        "submittingParty": { "$ref": "#/$defs/nullableText" }
+      }
+    },
+    "sourceDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "filename", "reportNumber", "orderNumber", "issuanceBasis", "publicDocument"],
+      "properties": {
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "filename": { "type": ["string", "null"] },
+        "reportNumber": { "$ref": "#/$defs/nullableText" },
+        "orderNumber": { "$ref": "#/$defs/nullableText" },
+        "issuanceBasis": { "$ref": "#/$defs/nullableText" },
+        "publicDocument": { "const": false }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analyte", "symbol", "resultText", "numericValue", "unit", "loqText", "method", "sequence"],
+      "properties": {
+        "analyte": { "type": "string" },
+        "symbol": { "$ref": "#/$defs/nullableText" },
+        "resultText": { "type": "string" },
+        "numericValue": { "type": ["number", "null"] },
+        "unit": { "type": "string" },
+        "loqText": { "$ref": "#/$defs/nullableText" },
+        "method": { "$ref": "#/$defs/nullableText" },
+        "sequence": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fingerprintRecorded", "fingerprintValid", "issuerSignatureVerified", "versionHistoryRecorded", "currentVersionConsistent", "fingerprintAlgorithm", "fingerprint", "issuerProof"],
+      "properties": {
+        "fingerprintRecorded": { "type": "boolean" },
+        "fingerprintValid": { "type": "boolean" },
+        "issuerSignatureVerified": { "type": "boolean" },
+        "versionHistoryRecorded": { "type": "boolean" },
+        "currentVersionConsistent": { "type": "boolean" },
+        "fingerprintAlgorithm": { "enum": ["SHA-256", null] },
+        "fingerprint": { "type": ["string", "null"] },
+        "issuerProof": { "type": ["object", "null"], "additionalProperties": true }
+      }
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["version", "status", "fingerprint", "createdAt"],
+      "properties": {
+        "version": { "type": "integer", "minimum": 1 },
+        "status": { "type": "string" },
+        "fingerprint": { "type": ["string", "null"] },
+        "createdAt": { "type": ["string", "null"] },
+        "payloadWithheld": { "type": "boolean" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "visibility": { "const": "controlled" } }, "required": ["visibility"] },
+      "then": {
+        "properties": {
+          "results": { "type": "array", "maxItems": 0 },
+          "resultsAccess": { "type": "object", "properties": { "state": { "const": "controlled" }, "grantRequired": { "const": true } } }
+        }
+      }
+    }
+  ]
+}

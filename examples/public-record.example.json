@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "tec-registry/1.0-draft",
+  "type": "TestEvidenceCredential",
+  "tecrid": "TECRID·DEMO-26-ABCD2345",
+  "status": "issued",
+  "version": 1,
+  "issuedAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "visibility": "public",
+  "resultsAccess": { "state": "included", "grantRequired": false },
+  "issuer": {
+    "code": "DEMO",
+    "name": "Example Analytical Laboratory (fictional)",
+    "status": "verified",
+    "registryPath": "/issuers/DEMO"
+  },
+  "subject": {
+    "sampleName": "Fictional cacao powder",
+    "productSku": "DEMO-CACAO-01",
+    "lotNumber": "FICTIONAL-LOT-2026-01",
+    "matrix": "Food · Powder",
+    "method": "Fictional demonstration method",
+    "collectedAt": null,
+    "receivedAt": null,
+    "testedAt": null,
+    "releasedAt": "2026-09-01",
+    "submittingParty": "Example Brand (fictional)"
+  },
+  "sourceDocument": {
+    "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "filename": "fictional-laboratory-report.pdf",
+    "reportNumber": "DEMO-REPORT-001",
+    "orderNumber": null,
+    "issuanceBasis": null,
+    "publicDocument": false
+  },
+  "results": [
+    {
+      "analyte": "Lead",
+      "symbol": "Pb",
+      "resultText": "42",
+      "numericValue": 42,
+      "unit": "µg/kg",
+      "loqText": "10",
+      "method": "Fictional demonstration method",
+      "sequence": 0
+    }
+  ],
+  "integrity": {
+    "fingerprintRecorded": true,
+    "fingerprintValid": true,
+    "issuerSignatureVerified": true,
+    "versionHistoryRecorded": true,
+    "currentVersionConsistent": true,
+    "fingerprintAlgorithm": "SHA-256",
+    "fingerprint": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+    "issuerProof": {
+      "algorithm": "Ed25519",
+      "keyId": "fictional.example/key/demo-01",
+      "keyReviewedAt": "2026-09-01T00:00:00.000Z",
+      "publicKeyJwk": { "kty": "OKP", "crv": "Ed25519", "x": "FICTIONAL_PUBLIC_KEY" },
+      "signature": "FICTIONAL_SIGNATURE",
+      "signedPayload": "FICTIONAL_CANONICAL_PAYLOAD",
+      "signedPayloadHash": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
+    }
+  },
+  "versions": [
+    {
+      "version": 1,
+      "status": "issued",
+      "fingerprint": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+      "canonicalPayload": "FICTIONAL_CANONICAL_PAYLOAD",
+      "createdAt": "2026-09-01T00:00:00.000Z"
+    }
+  ],
+  "links": {
+    "human": "/records/TECRID%C2%B7DEMO-26-ABCD2345",
+    "json": "/api/v1/credentials/TECRID%C2%B7DEMO-26-ABCD2345",
+    "issuer": "/issuers/DEMO"
+  },
+  "interpretationBoundary": "This record establishes issuer attribution, content integrity, and status. It does not by itself establish representative sampling, method suitability, regulatory compliance, or product safety."
+}

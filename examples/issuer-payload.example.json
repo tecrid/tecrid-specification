@@ -1,0 +1,33 @@
+{
+  "type": "TestEvidenceCredential",
+  "sampleName": "Fictional cacao powder",
+  "productSku": "DEMO-CACAO-01",
+  "lotNumber": "FICTIONAL-LOT-2026-01",
+  "matrix": "Food · Powder",
+  "method": "Fictional demonstration method",
+  "submittingParty": "Example Brand (fictional)",
+  "collectedAt": null,
+  "receivedAt": null,
+  "testedAt": null,
+  "releasedAt": "2026-09-01",
+  "visibility": "public",
+  "sourceDocument": {
+    "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "filename": "fictional-laboratory-report.pdf",
+    "reportNumber": "DEMO-REPORT-001",
+    "orderNumber": null,
+    "intakeId": null,
+    "issuanceBasis": null
+  },
+  "results": [
+    {
+      "analyte": "Lead",
+      "symbol": "Pb",
+      "resultText": "42",
+      "numericValue": 42,
+      "unit": "µg/kg",
+      "loqText": "10",
+      "method": "Fictional demonstration method"
+    }
+  ]
+}

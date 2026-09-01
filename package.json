@@ -1,0 +1,15 @@
+{
+  "name": "@tecrid/specification",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TECRID protocol specification, JSON Schemas, and example records",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

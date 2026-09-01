@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tecrid/tecrid-specification/v0.1.0/schema/issuer-payload.schema.json",
+  "title": "TECRID canonical issuer payload",
+  "description": "Normalized payload serialized in the defined property order and signed as exact UTF-8 bytes by the laboratory issuer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "sampleName", "productSku", "lotNumber", "matrix", "method", "submittingParty", "collectedAt", "receivedAt", "testedAt", "releasedAt", "visibility", "sourceDocument", "results"],
+  "properties": {
+    "type": { "const": "TestEvidenceCredential" },
+    "sampleName": { "type": "string", "minLength": 1 },
+    "productSku": { "type": ["string", "null"] },
+    "lotNumber": { "type": ["string", "null"] },
+    "matrix": { "type": ["string", "null"] },
+    "method": { "type": ["string", "null"] },
+    "submittingParty": { "type": ["string", "null"] },
+    "collectedAt": { "type": ["string", "null"] },
+    "receivedAt": { "type": ["string", "null"] },
+    "testedAt": { "type": ["string", "null"] },
+    "releasedAt": { "type": ["string", "null"] },
+    "visibility": { "enum": ["public", "controlled"] },
+    "sourceDocument": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sha256", "filename", "reportNumber", "orderNumber", "intakeId", "issuanceBasis"],
+          "properties": {
+            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "filename": { "type": "string", "minLength": 1 },
+            "reportNumber": { "type": ["string", "null"] },
+            "orderNumber": { "type": ["string", "null"] },
+            "intakeId": { "type": ["string", "null"] },
+            "issuanceBasis": { "type": ["string", "null"] }
+          }
+        }
+      ]
+    },
+    "results": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["analyte", "symbol", "resultText", "numericValue", "unit", "loqText", "method"],
+        "properties": {
+          "analyte": { "type": "string", "minLength": 1 },
+          "symbol": { "type": ["string", "null"] },
+          "resultText": { "type": "string", "minLength": 1 },
+          "numericValue": { "type": ["number", "null"] },
+          "unit": { "type": "string", "minLength": 1 },
+          "loqText": { "type": ["string", "null"] },
+          "method": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

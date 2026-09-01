@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use or implement the TECRID Specification, cite this release."
+title: "TECRID Specification"
+type: software
+version: 0.1.0
+date-released: 2026-09-01
+license: MIT
+url: "https://github.com/tecrid/tecrid-specification"
+repository-code: "https://github.com/tecrid/tecrid-specification"
+abstract: "Open technical specification and JSON Schemas for persistent, signed, versioned laboratory evidence records identified by TECRIDs."
+authors:
+  - family-names: Pendergrass
+    given-names: Karen
+    orcid: "https://orcid.org/0000-0002-2348-7259"
+    affiliation: "Institute of Contaminant Standards"
+keywords:
+  - laboratory evidence
+  - certificate of analysis
+  - persistent identifier
+  - data integrity
+  - Ed25519
+  - JSON Schema

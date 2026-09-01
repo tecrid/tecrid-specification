@@ -1,0 +1,34 @@
+{
+  "title": "TECRID Specification",
+  "description": "Open technical specification and JSON Schemas for persistent, signed, versioned laboratory evidence records identified by TECRIDs.",
+  "license": "mit-license",
+  "upload_type": "software",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Pendergrass, Karen",
+      "orcid": "0000-0002-2348-7259",
+      "affiliation": "Institute of Contaminant Standards"
+    }
+  ],
+  "keywords": [
+    "TECRID",
+    "laboratory evidence",
+    "persistent identifier",
+    "certificate of analysis",
+    "Ed25519",
+    "JSON Schema"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://tecrid.com/standard",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/tecrid/tecrid-connect",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

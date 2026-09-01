@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "tec-registry/1.0-draft",
+  "type": "TestEvidenceCredential",
+  "tecrid": "TECRID·DEMO-26-WXYZ6789",
+  "status": "issued",
+  "version": 1,
+  "issuedAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "visibility": "controlled",
+  "resultsAccess": { "state": "controlled", "grantRequired": true },
+  "issuer": {
+    "code": "DEMO",
+    "name": "Example Analytical Laboratory (fictional)",
+    "status": "verified",
+    "registryPath": "/issuers/DEMO"
+  },
+  "subject": {
+    "sampleName": "Controlled fictional sample",
+    "productSku": null,
+    "lotNumber": null,
+    "matrix": null,
+    "method": null,
+    "collectedAt": null,
+    "receivedAt": null,
+    "testedAt": null,
+    "releasedAt": null,
+    "submittingParty": null
+  },
+  "sourceDocument": null,
+  "results": [],
+  "integrity": {
+    "fingerprintRecorded": true,
+    "fingerprintValid": true,
+    "issuerSignatureVerified": true,
+    "versionHistoryRecorded": true,
+    "currentVersionConsistent": true,
+    "fingerprintAlgorithm": "SHA-256",
+    "fingerprint": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+    "issuerProof": {
+      "algorithm": "Ed25519",
+      "keyId": "fictional.example/key/demo-01",
+      "keyReviewedAt": "2026-09-01T00:00:00.000Z",
+      "publicKeyJwk": null,
+      "signature": "FICTIONAL_SIGNATURE",
+      "signedPayload": null,
+      "signedPayloadHash": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "payloadWithheld": true
+    }
+  },
+  "versions": [
+    {
+      "version": 1,
+      "status": "issued",
+      "fingerprint": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "canonicalPayload": null,
+      "issuerSignature": null,
+      "issuerKeyId": "fictional.example/key/demo-01",
+      "issuerPublicKeyJwk": null,
+      "issuerKeyVerifiedAt": "2026-09-01T00:00:00.000Z",
+      "signatureAlgorithm": "Ed25519",
+      "signedPayload": null,
+      "signedPayloadHash": "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+      "changeType": "issuance",
+      "changeReason": null,
+      "createdAt": "2026-09-01T00:00:00.000Z",
+      "payloadWithheld": true
+    }
+  ],
+  "links": {
+    "human": "/records/TECRID%C2%B7DEMO-26-WXYZ6789",
+    "json": "/api/v1/credentials/TECRID%C2%B7DEMO-26-WXYZ6789",
+    "issuer": "/issuers/DEMO"
+  },
+  "interpretationBoundary": "This record establishes issuer attribution, content integrity, and status. It does not by itself establish representative sampling, method suitability, regulatory compliance, or product safety."
+}

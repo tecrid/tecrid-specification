@@ -1,0 +1,44 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "TECRID Specification",
+  "description": "Open technical specification and JSON Schemas for persistent, signed, versioned laboratory evidence records identified by TECRIDs.",
+  "version": "0.1.0",
+  "datePublished": "2026-09-01",
+  "codeRepository": "https://github.com/tecrid/tecrid-specification",
+  "issueTracker": "https://github.com/tecrid/tecrid-specification/issues",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "applicationCategory": "Laboratory evidence infrastructure",
+  "developmentStatus": "concept",
+  "author": {
+    "@type": "Person",
+    "@id": "https://contaminantstandards.com/people/karen-pendergrass#person",
+    "givenName": "Karen",
+    "familyName": "Pendergrass",
+    "sameAs": "https://orcid.org/0000-0002-2348-7259",
+    "affiliation": {
+      "@type": "Organization",
+      "@id": "https://contaminantstandards.com/#organization",
+      "name": "Institute of Contaminant Standards"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://contaminantstandards.com/#organization",
+    "name": "Institute of Contaminant Standards",
+    "url": "https://contaminantstandards.com"
+  },
+  "relatedLink": [
+    "https://tecrid.com/standard",
+    "https://tecrid.com/developers",
+    "https://github.com/tecrid/tecrid-connect"
+  ],
+  "keywords": [
+    "TECRID",
+    "laboratory evidence",
+    "persistent identifier",
+    "certificate of analysis",
+    "Ed25519",
+    "JSON Schema"
+  ]
+}
