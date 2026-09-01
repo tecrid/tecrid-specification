@@ -32,7 +32,7 @@ The validation suite checks every schema, validates the fictional example docume
 
 ## Versioning and citation
 
-Tagged releases are immutable citation targets. `CITATION.cff`, `codemeta.json`, and `.zenodo.json` describe the repository for GitHub, software catalogs, and a Zenodo archive. Once the GitHub–Zenodo connection is enabled, release `v0.1.0` can receive a version DOI and the repository can display the concept DOI.
+Tagged releases are immutable citation targets. `CITATION.cff`, `codemeta.json`, and `.zenodo.json` describe the repository for GitHub, software catalogs, and Zenodo. Cite release `v0.1.0` using [doi:10.5281/zenodo.22232196](https://doi.org/10.5281/zenodo.22232196).
 
 ## License
 

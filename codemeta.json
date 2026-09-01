@@ -5,6 +5,7 @@
   "description": "Open technical specification and JSON Schemas for persistent, signed, versioned laboratory evidence records identified by TECRIDs.",
   "version": "0.1.0",
   "datePublished": "2026-09-01",
+  "identifier": "https://doi.org/10.5281/zenodo.22232196",
   "codeRepository": "https://github.com/tecrid/tecrid-specification",
   "issueTracker": "https://github.com/tecrid/tecrid-specification/issues",
   "license": "https://spdx.org/licenses/MIT.html",
@@ -29,6 +30,7 @@
     "url": "https://contaminantstandards.com"
   },
   "relatedLink": [
+    "https://doi.org/10.5281/zenodo.22232196",
     "https://tecrid.com/standard",
     "https://tecrid.com/developers",
     "https://github.com/tecrid/tecrid-connect"
