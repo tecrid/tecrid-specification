@@ -22,6 +22,11 @@
   ],
   "related_identifiers": [
     {
+      "identifier": "10.5281/zenodo.22232195",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    },
+    {
       "identifier": "https://tecrid.com/standard",
       "relation": "isDocumentedBy",
       "scheme": "url"
